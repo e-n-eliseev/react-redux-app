@@ -1,9 +1,18 @@
 .container, .img, .description,
-.btn {
+.btn,
+.likes, .delete_btn {
   border: 1px solid black;
   border-radius: 10px;
   -webkit-box-shadow: 0 0 5px black;
           box-shadow: 0 0 5px black;
+}
+
+.btn:active,
+.delete_btn:active {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+  -webkit-box-shadow: 0 0 0 black;
+          box-shadow: 0 0 0 black;
 }
 
 .App {
@@ -32,6 +41,7 @@
           justify-content: space-between;
   gap: 10px;
   padding: 5px;
+  overflow: hidden;
 }
 
 .left {
@@ -58,9 +68,18 @@
 }
 
 .description,
-.btn {
+.btn,
+.likes {
   margin: 20px 0;
   height: 60px;
+}
+
+.likes {
+  text-align: center;
+  padding: 5px 10px;
+  font-weight: 700;
+  height: 25px;
+  width: 250px;
 }
 
 .btn_container {
@@ -79,5 +98,68 @@
 .btn {
   height: 40px;
   width: 200px;
+  background-color: #cfb3b3;
+  font-size: large;
+}
+
+.right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 35%;
+          flex: 1 1 35%;
+}
+
+.comment,
+.comments_item {
+  padding: 10px;
+  border-bottom: 2px solid black;
+  min-height: 20px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.comments_list {
+  list-style: none;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.comments_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.delete_btn {
+  background-color: #cfb3b3;
+  font-weight: 600;
+  width: 25px;
+}
+
+.btn,
+.delete_btn {
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+}
+
+.btn:hover,
+.delete_btn:hover {
+  background-color: #cc8686;
+}
+
+.github_link {
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+}
+
+.github_link:hover {
+  color: cadetblue;
 }
 /*# sourceMappingURL=App.css.map */
