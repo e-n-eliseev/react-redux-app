@@ -5,7 +5,7 @@ const initialState = {
     likes: 0,
 };
 //создаем функцию, изменяющую состояние хранилища
-export const likesReducer = (state = initialState, action) => {
+const likesReducer = (state = initialState, action) => {
     //проверка типа события
     switch (action.type) {
         case LIKE:
@@ -23,3 +23,5 @@ export const likesReducer = (state = initialState, action) => {
             return state;
     }
 }
+
+export default likesReducer;

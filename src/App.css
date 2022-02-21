@@ -1,6 +1,6 @@
-.container, .img, .description,
-.btn,
-.likes, .delete_btn {
+.container, .img, .btn,
+.likes, .delete_btn,
+.delete_btn_form {
   border: 1px solid black;
   border-radius: 10px;
   -webkit-box-shadow: 0 0 5px black;
@@ -8,7 +8,8 @@
 }
 
 .btn:active,
-.delete_btn:active {
+.delete_btn:active,
+.delete_btn_form:active {
   -webkit-transform: translateY(5px);
           transform: translateY(5px);
   -webkit-box-shadow: 0 0 0 black;
@@ -30,7 +31,7 @@
 
 .container {
   width: 1200px;
-  height: 900px;
+  min-height: 900px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -41,7 +42,6 @@
           justify-content: space-between;
   gap: 10px;
   padding: 5px;
-  overflow: hidden;
 }
 
 .left {
@@ -70,15 +70,60 @@
 .description,
 .btn,
 .likes {
-  margin: 20px 0;
-  height: 60px;
+  margin: 15px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 5px 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  max-width: 750px;
+}
+
+.description {
+  border: none;
+  min-height: 40px;
+  border-bottom: 2px solid black;
+}
+
+.description:focus {
+  outline: none;
+}
+
+.description::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+}
+
+.description:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+}
+
+.description::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+}
+
+.description::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+}
+
+h1 {
+  margin: auto;
+}
+
+.form {
+  position: relative;
 }
 
 .likes {
   text-align: center;
   padding: 5px 10px;
   font-weight: 700;
-  height: 25px;
+  height: 40px;
   width: 250px;
 }
 
@@ -135,21 +180,34 @@
           align-items: center;
 }
 
-.delete_btn {
+.delete_btn,
+.delete_btn_form {
   background-color: #cfb3b3;
   font-weight: 600;
   width: 25px;
 }
 
 .btn,
-.delete_btn {
+.delete_btn,
+.delete_btn_form {
   -webkit-transition: 0.1s ease;
   transition: 0.1s ease;
 }
 
 .btn:hover,
-.delete_btn:hover {
+.delete_btn:hover,
+.delete_btn_form:hover {
   background-color: #cc8686;
+}
+
+.delete_btn_form {
+  position: absolute;
+  top: 5%;
+  left: 90%;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 .github_link {

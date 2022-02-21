@@ -1,5 +1,6 @@
 import './App.css';
 import LikeDislikeBtn from './components/LikeDislikeBtn';
+import FotoDescription from './components/FotoDescription';
 
 function App() {
   return (
@@ -9,12 +10,9 @@ function App() {
           <div className='img'>
             <img className='photo' src='https://images.unsplash.com/photo-1612528443702-f6741f70a049?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80' alt='picture'></img>
           </div>
-          <div className='description'></div>
-          <div className='description'></div>
-
+          <FotoDescription />
           <LikeDislikeBtn />
-
-          <a className='github_link' href='https://github.com/e-n-eliseev'>Created by e-n-eliseev. Visit my GitHub pages</a>
+          <a className='github_link' href='https://github.com/e-n-eliseev'>Created by e-n-eliseev. Visit my GitHub page.</a>
         </div>
         <div className='right'>
           <div className='comment'></div>
@@ -29,24 +27,6 @@ function App() {
             <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
             <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
             <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-
           </ul>
         </div>
       </div>
