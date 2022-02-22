@@ -1,17 +1,27 @@
 //импортируем actions комментариев
 import { updateComment, deleteComment, errorON } from "../redux/actions";
 //импортируем хук работы с состоянием компонента
-import { useState } from "react";
+import { useState, useEffect } from "react";
 //импортируем хуки работы с хранилищем
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Comment = ({ item }) => {
+    //получаем данные из хранилища
+    const error = useSelector(state => {
+        const { additionalReducer } = state;
+        return additionalReducer.error;
+    })
     //текущее состояние поля ввода
     const [comment, setCommnent] = useState(item.text);
     //предыдущее состояние поля ввода
     const [commentOld] = useState(item.text);
     //состояние изменения
     const [isChanging, setIsChanging] = useState(false);
+    //проверка на наличие ошибки, если есть, то восстанавливаем предыдущее значение
+    useEffect(() => {
+        setCommnent(commentOld);
+        setIsChanging(false);
+    }, [error])
     //функция изменяющая состояние поля ввода при введении правок в комментарий
     const onInputComment = (event) => {
         setCommnent(event.target.value);
@@ -25,10 +35,11 @@ const Comment = ({ item }) => {
             dispatch(updateComment(item.id, comment));
             setIsChanging(false);
         } else {
-            dispatch(errorON("Комментарий не должен быть пустым!"))
-            setCommnent(commentOld);
-            setIsChanging(false);
+            dispatch(errorON("Комментарий не должен быть пустым!"));
+            // setCommnent(commentOld);
+            // setIsChanging(false);
         }
+
     }
     //функция удаляющая комментарий в хранилище
     const onDeleteComment = (event) => {
