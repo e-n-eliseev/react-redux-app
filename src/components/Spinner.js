@@ -1,7 +1,6 @@
 import React from "react";
 import { TailSpin } from "react-loader-spinner";
 import { useSelector } from "react-redux";
-import additionalReducer from "../redux/additionalReducer";
 
 
 const Spinner = () => {

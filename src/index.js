@@ -9,12 +9,14 @@ import { Provider } from 'react-redux'
 import rootReducer from './redux/rootReducer'
 //устанавливаем для асинхронного подтягивания данных в приложение из внешнего API
 import thunk from "redux-thunk";
+import { spamfilter } from './redux/spamfilter';
 
 
 //создаем инстанс хранилища, второй параметр позволяет работать с redux dev tools
 let store = createStore(rootReducer, compose(
   applyMiddleware(
-    thunk
+    thunk,
+    spamfilter
   ),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 )

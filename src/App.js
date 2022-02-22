@@ -9,11 +9,11 @@ function App() {
       <div className='container'>
         <div className='left'>
           <div className='img'>
-            <img className='photo' src='https://images.unsplash.com/photo-1612528443702-f6741f70a049?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80' alt='picture'></img>
+            <img className='photo' src='https://images.unsplash.com/photo-1612528443702-f6741f70a049?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80' alt='img'></img>
           </div>
           <FotoDescription />
           <LikeDislikeBtn />
-          <a className='github_link' href='https://github.com/e-n-eliseev'>Created by e-n-eliseev. Visit my GitHub page.</a>
+          <a className='github_link' href='https://github.com/e-n-eliseev/react-redux-app'>Created by e-n-eliseev. Visit my GitHub page.</a>
           <hr className='hr'></hr>
         </div>
         <Comments />

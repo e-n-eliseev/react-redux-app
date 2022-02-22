@@ -170,6 +170,11 @@ h1 {
   overflow: hidden;
 }
 
+.comment_no {
+  text-align: center;
+  font-weight: 600;
+}
+
 .delete_btn,
 .delete_btn_form {
   background-color: #cfb3b3;
@@ -234,6 +239,7 @@ h1 {
   left: 50px;
   background-color: red;
   padding: 10px;
+  z-index: 10;
 }
 
 .hr {

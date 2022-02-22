@@ -1,6 +1,4 @@
-import { errorON } from "../redux/actions"
 import { useSelector } from "react-redux"
-import additionalReducer from "../redux/additionalReducer";
 
 const Error = () => {
     //получаем данные из хранилища

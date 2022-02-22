@@ -19,6 +19,10 @@ const Comments = () => {
         const { commentsReducer } = state;
         return commentsReducer.comments
     })
+    const loading = useSelector(state => {
+        const { additionalReducer } = state;
+        return additionalReducer.loading;
+    })
     const dispatch = useDispatch();
     //обработка события отправки формы
     const onAddComment = (event) => {
@@ -51,11 +55,14 @@ const Comments = () => {
             </form>
             <Spinner />
             <ul className='comments_list' >
-                {!!comments && comments.map(item => {
-                    return <Comment item={item} key={uniqid()} />
-                })}
+                {comments.length
+                    ? comments.map(item => {
+                        return <Comment item={item} key={uniqid()} />
+                    })
+                    : <li className={!loading ? "comment_no" : "hidden"} > No comments yet!</li>
+                }
             </ul>
-        </div>
+        </div >
     )
 }
 
