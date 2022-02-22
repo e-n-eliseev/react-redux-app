@@ -10,8 +10,8 @@
 .btn:active,
 .delete_btn:active,
 .delete_btn_form:active {
-  -webkit-transform: translateY(5px);
-          transform: translateY(5px);
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
   -webkit-box-shadow: 0 0 0 black;
           box-shadow: 0 0 0 black;
 }
@@ -26,12 +26,14 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#a5d172));
+  background-image: linear-gradient(white, #a5d172);
 }
 
 .container {
   width: 1200px;
-  min-height: 900px;
+  min-height: 700px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -42,17 +44,25 @@
           justify-content: space-between;
   gap: 10px;
   padding: 5px;
+  background-color: white;
 }
 
 .left {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 65%;
-          flex: 0 0 65%;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .img {
   width: 100%;
-  height: 600px;
+  height: 450px;
   position: relative;
   overflow: hidden;
 }
@@ -70,15 +80,14 @@
 .description,
 .btn,
 .likes {
-  margin: 15px 0;
+  margin: 5px 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: block;
   width: 100%;
   padding: 5px 15px;
   font-size: 1.1rem;
-  font-weight: 600;
-  max-width: 750px;
+  overflow: hidden;
 }
 
 .description {
@@ -124,7 +133,6 @@ h1 {
   padding: 5px 10px;
   font-weight: 700;
   height: 40px;
-  width: 250px;
 }
 
 .btn_container {
@@ -132,9 +140,9 @@ h1 {
   display: -ms-flexbox;
   display: flex;
   gap: 50px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -149,17 +157,8 @@ h1 {
 
 .right {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 35%;
-          flex: 1 1 35%;
-}
-
-.comment,
-.comments_item {
-  padding: 10px;
-  border-bottom: 2px solid black;
-  min-height: 20px;
-  margin-bottom: 10px;
-  overflow: hidden;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
 }
 
 .comments_list {
@@ -168,23 +167,14 @@ h1 {
   overflow: hidden;
 }
 
-.comments_item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .delete_btn,
 .delete_btn_form {
   background-color: #cfb3b3;
   font-weight: 600;
   width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 5px;
 }
 
 .btn,
@@ -200,10 +190,12 @@ h1 {
   background-color: #cc8686;
 }
 
+.delete_btn {
+  right: 0px;
+}
+
 .delete_btn_form {
-  position: absolute;
-  top: 5%;
-  left: 90%;
+  right: 25px;
 }
 
 .hidden {

@@ -1,6 +1,7 @@
 import './App.css';
 import LikeDislikeBtn from './components/LikeDislikeBtn';
 import FotoDescription from './components/FotoDescription';
+import Comments from './components/Comments';
 
 function App() {
   return (
@@ -14,21 +15,7 @@ function App() {
           <LikeDislikeBtn />
           <a className='github_link' href='https://github.com/e-n-eliseev'>Created by e-n-eliseev. Visit my GitHub page.</a>
         </div>
-        <div className='right'>
-          <div className='comment'></div>
-          <ul className='comments_list' >
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-            <li className='comments_item'><p className='comments_text'  >lorem5</p><button className='delete_btn'>&times;</button></li>
-          </ul>
-        </div>
+        <Comments />
       </div>
     </div>
   );

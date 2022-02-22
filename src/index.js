@@ -6,8 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import rootReducer from './redux/rootReducer'
-//создаем инстанс хранилища
-let store = createStore(rootReducer);
+//создаем инстанс хранилища, второй параметр позволяет работать с redux dev tools
+let store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 
 ReactDOM.render(

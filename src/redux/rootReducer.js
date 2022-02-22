@@ -3,11 +3,13 @@ import { combineReducers } from "redux";
 //импортируем reducers
 import likesReducer from "./likesReducer";
 import descriptionReducer from "./descriptionReducer";
+import commentsReducer from "./commentsReducer";
 
 
 const rootReduser = combineReducers({
     likesReducer,
-    descriptionReducer
+    descriptionReducer,
+    commentsReducer,
 })
 
 export default rootReduser;
