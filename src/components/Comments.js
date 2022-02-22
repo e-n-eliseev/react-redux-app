@@ -27,8 +27,10 @@ const Comments = () => {
     //обработка события отправки формы
     const onAddComment = (event) => {
         event.preventDefault();
-        dispatch(addComment(uniqid(), inputValue));
-        setInputValue("")
+        if (inputValue) {
+            dispatch(addComment(uniqid(), inputValue));
+            setInputValue("")
+        }
     }
     //функция изменения состояния поля ввода
     const onInputComment = (event) => {
