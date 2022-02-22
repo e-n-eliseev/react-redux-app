@@ -14,6 +14,7 @@ function App() {
           <FotoDescription />
           <LikeDislikeBtn />
           <a className='github_link' href='https://github.com/e-n-eliseev'>Created by e-n-eliseev. Visit my GitHub page.</a>
+          <hr className='hr'></hr>
         </div>
         <Comments />
       </div>

@@ -29,6 +29,7 @@
   min-height: 100vh;
   background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#a5d172));
   background-image: linear-gradient(white, #a5d172);
+  padding: 5px;
 }
 
 .container {
@@ -133,6 +134,7 @@ h1 {
   padding: 5px 10px;
   font-weight: 700;
   height: 40px;
+  max-width: 200px;
 }
 
 .btn_container {
@@ -159,6 +161,7 @@ h1 {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
+  position: relative;
 }
 
 .comments_list {
@@ -211,5 +214,66 @@ h1 {
 
 .github_link:hover {
   color: cadetblue;
+}
+
+.spinner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.error {
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  background-color: red;
+  padding: 10px;
+}
+
+.hr {
+  height: 2px;
+  background-color: black;
+  width: 100%;
+  display: none;
+}
+
+@media (max-width: 950px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .hr {
+    display: block;
+  }
+}
+
+@media (max-width: 650px) {
+  .btn_container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 0;
+  }
+  .description {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .img {
+    height: 300px;
+  }
 }
 /*# sourceMappingURL=App.css.map */

@@ -3,12 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux'
+//compose позволяет добавить доп элементы хранилища, applyMiddleware допфункционал 
+import { createStore, compose, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import rootReducer from './redux/rootReducer'
-//создаем инстанс хранилища, второй параметр позволяет работать с redux dev tools
-let store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+//устанавливаем для асинхронного подтягивания данных в приложение из внешнего API
+import thunk from "redux-thunk";
 
+
+//создаем инстанс хранилища, второй параметр позволяет работать с redux dev tools
+let store = createStore(rootReducer, compose(
+  applyMiddleware(
+    thunk
+  ),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+)
 
 ReactDOM.render(
   <React.StrictMode>

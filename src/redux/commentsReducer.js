@@ -1,25 +1,30 @@
 //импортируем типы событий
-import { DELETECOMMENT, ADDCOMMENT, UPDATECOMMENT } from "./types";
+import { LOAD_COMMENT, DELETE_COMMENT, ADD_COMMENT, UPDATE_COMMENT } from "./types";
 
 
 const initialState = {
-    comments: [
-        { id: 1, text: "Вася" },
-        { id: 2, text: "Вася" },
-        { id: 3, text: "Вася" },
-        { id: 4, text: "Вася" },
-        { id: 5, text: "Вася" },
-    ]
+    comments: []
 };
 
 const commentsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADDCOMMENT:
+        case LOAD_COMMENT:
+            const loadData = action.data.map(item => {
+                return {
+                    id: item.id,
+                    text: item.name
+                }
+            })
+            return {
+                ...state,
+                comments: loadData
+            };
+        case ADD_COMMENT:
             return {
                 ...state,
                 comments: [...state.comments, action.data]
             };
-        case UPDATECOMMENT:
+        case UPDATE_COMMENT:
             const { data } = action;
             const { comments } = state;
             const changeId = comments.findIndex(item => item.id === data.id);
@@ -28,7 +33,7 @@ const commentsReducer = (state = initialState, action) => {
                 ...state,
                 comments
             };
-        case DELETECOMMENT:
+        case DELETE_COMMENT:
             //используем IIFE для инкапсуляции переменных, чтобы избежать 
             //конфликта с UPDATECOMMENT
             return (() => {

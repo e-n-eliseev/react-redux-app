@@ -18,12 +18,16 @@ const FotoDescription = () => {
     //обработка события отправки формы
     const onAddDescription = (event) => {
         event.preventDefault();
-        dispatch(addDescription(inputValue));
-        setInputValue("")
+        if (inputValue) {
+            dispatch(addDescription(inputValue));
+            setInputValue("")
+        }
     }
     //функция изменения состояния поля ввода
     const onAddText = (event) => {
-        setInputValue(event.target.value);
+        if (event.target.value.trim()) {
+            setInputValue(event.target.value);
+        }
     }
     return (
         <form className="form" onSubmit={onAddDescription}>
