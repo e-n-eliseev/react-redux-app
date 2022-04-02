@@ -7,7 +7,7 @@ export function spamfilter({ dispatch }) {
     return function (next) {
         return function (action) {
             if (action.type === ADD_COMMENT || action.type === UPDATE_COMMENT) {
-                const fraseHasBadWords = badWords.some(item => action.data.text.includes(item));
+                const fraseHasBadWords = badWords.some(item => action.data.text.toLowerCase().includes(item));
                 if (fraseHasBadWords) {
                     return dispatch(errorON("Выражайтесь культурно!"));
                 }
