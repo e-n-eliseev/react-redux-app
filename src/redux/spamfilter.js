@@ -1,5 +1,5 @@
 import { ADD_COMMENT, UPDATE_COMMENT } from "./types";
-import { updateComment, errorON } from "./actions";
+import { errorON } from "./actions";
 
 const badWords = ["тормоз", "слоупок", "редиска", "козел", "осел"];
 
