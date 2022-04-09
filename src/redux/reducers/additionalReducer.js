@@ -1,12 +1,12 @@
-import { LOADING_ON, LOADING_OFF, ERROR_ON, ERROR_OFF } from "./types";
+import { LOADING_ON, LOADING_OFF, ERROR_ON, ERROR_OFF } from "../types";
 
 const initialState = {
     loading: true,
     error: null
 }
 
-const additionalReducer = (state = initialState, action) => {
-    switch (action.type) {
+const additionalReducer = (state = initialState, { type, text }) => {
+    switch (type) {
         case LOADING_ON:
             return {
                 ...state,
@@ -20,7 +20,7 @@ const additionalReducer = (state = initialState, action) => {
         case ERROR_ON:
             return {
                 ...state,
-                error: action.text
+                error: text
             }
         case ERROR_OFF:
             return {

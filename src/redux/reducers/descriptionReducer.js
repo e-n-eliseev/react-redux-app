@@ -1,15 +1,15 @@
-import { DESCRIPTION } from "./types";
+import { DESCRIPTION } from "../types";
 
 const initialState = {
     text: "Here will be your description!"
 }
 
-const descriptionReducer = (state = initialState, action) => {
-    switch (action.type) {
+const descriptionReducer = (state = initialState, { type, text }) => {
+    switch (type) {
         case DESCRIPTION:
             return {
                 ...state,
-                text: action.text
+                text: text
             };
         default:
             return state;

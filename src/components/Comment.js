@@ -4,13 +4,12 @@ import { updateComment, deleteComment, errorON } from "../redux/actions";
 import { useState, useEffect } from "react";
 //импортируем хуки работы с хранилищем
 import { useDispatch, useSelector } from "react-redux";
+import { getCommentError } from "../redux/redusersSelectors/additionalSelectors";
+
 
 const Comment = ({ item }) => {
     //получаем данные из хранилища
-    const error = useSelector(state => {
-        const { additionalReducer } = state;
-        return additionalReducer.error;
-    })
+    const error = useSelector(getCommentError)
     //текущее состояние поля ввода
     const [comment, setCommnent] = useState(item.text);
     //предыдущее состояние поля ввода
@@ -36,8 +35,6 @@ const Comment = ({ item }) => {
             setIsChanging(false);
         } else {
             dispatch(errorON("Комментарий не должен быть пустым!"));
-            // setCommnent(commentOld);
-            // setIsChanging(false);
         }
 
     }

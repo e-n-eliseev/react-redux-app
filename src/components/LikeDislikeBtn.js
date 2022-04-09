@@ -3,13 +3,11 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 //импортируем actions событий увеличени/уменьшения количества лайков
 import { increaseLike, decreaseLike } from "../redux/actions";
+import { getLikes } from "../redux/redusersSelectors/likesSelectors";
 
 const LikeDislikeBtn = () => {
     //получаем данные из хранилища
-    const likes = useSelector(state => {
-        const { likesReducer } = state;
-        return likesReducer.likes;
-    })
+    const likes = useSelector(getLikes)
     const dispatch = useDispatch();
     //функция обработчик события увеличения лайков
     const increaseLikes = () => {

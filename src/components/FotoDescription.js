@@ -5,15 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { addDescription } from "../redux/actions";
 //импортируем хук работы с состоянием компонента
 import { useState } from "react";
+import { getDescription } from "../redux/redusersSelectors/descriptionSelectors";
 
 const FotoDescription = () => {
     //состояние поля ввода
     const [inputValue, setInputValue] = useState("");
     //получаем данные из хранилища
-    const text = useSelector(state => {
-        const { descriptionReducer } = state;
-        return descriptionReducer.text
-    });
+    const text = useSelector(getDescription);
     const dispatch = useDispatch();
     //обработка события отправки формы
     const onAddDescription = (event) => {

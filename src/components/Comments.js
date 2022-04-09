@@ -3,26 +3,23 @@ import { addComment, loadComment } from "../redux/actions";
 //импортируем хук работы с состоянием компонента
 import { useEffect, useState } from "react";
 //импортируем хук работы с хранилищем
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import Comment from "./Comment";
 import Spinner from "./Spinner"
 import Error from "./Error";
 //импортируем пакет создания уникальных ID
 import uniqid from "uniqid";
+import { getComments } from "../redux/redusersSelectors/commentsSelector";
+import { getLoadingStatus } from "../redux/redusersSelectors/additionalSelectors";
 
 
 const Comments = () => {
     //состояние поля ввода
     const [inputValue, setInputValue] = useState("");
-    //получаем данные и харнилища
-    const comments = useSelector(state => {
-        const { commentsReducer } = state;
-        return commentsReducer.comments
-    })
-    const loading = useSelector(state => {
-        const { additionalReducer } = state;
-        return additionalReducer.loading;
-    })
+    //получаем данные из хранилища, shallowEqual добавляем для оптимизации 
+    //сравнения данных при получении обьекта
+    const comments = useSelector(getComments, shallowEqual);
+    const loading = useSelector(getLoadingStatus)
     const dispatch = useDispatch();
     //обработка события отправки формы
     const onAddComment = (event) => {

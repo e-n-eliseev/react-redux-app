@@ -13,7 +13,7 @@ import { spamfilter } from './redux/spamfilter';
 
 
 //создаем инстанс хранилища
-let store = createStore(rootReducer,
+const store = createStore(rootReducer,
   applyMiddleware(
     thunk,
     spamfilter

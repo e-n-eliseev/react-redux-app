@@ -1,11 +1,9 @@
 import { useSelector } from "react-redux";
+import { getCommentError } from "../redux/redusersSelectors/additionalSelectors";
 
 const Error = () => {
     //получаем данные из хранилища
-    const text = useSelector(state => {
-        const { additionalReducer } = state;
-        return additionalReducer.error
-    })
+    const text = useSelector(getCommentError)
     return (
         <>
             {

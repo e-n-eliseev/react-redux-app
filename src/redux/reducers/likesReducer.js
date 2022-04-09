@@ -1,13 +1,13 @@
 //импротируем типы событий
-import { LIKE, DISLIKE } from "./types";
+import { LIKE, DISLIKE } from "../types";
 //задаем начальное состояние 
 const initialState = {
     likes: 0,
 };
 //создаем функцию, изменяющую состояние хранилища
-const likesReducer = (state = initialState, action) => {
+const likesReducer = (state = initialState, { type }) => {
     //проверка типа события
-    switch (action.type) {
+    switch (type) {
         case LIKE:
             return {
                 ...state,
