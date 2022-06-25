@@ -95,6 +95,8 @@
   border: none;
   min-height: 40px;
   border-bottom: 2px solid black;
+  padding-right: 50px;
+  text-overflow: ellipsis;
 }
 
 .description:focus {
